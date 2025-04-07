@@ -4,17 +4,25 @@ title: "Home"
 permalink: /
 ---
 
-<section class="split-hero">
+<section class="split-hero" role="region" aria-label="Homepage Hero">
   <div class="hero-text-block">
     <h2 class="pre-title">INSIGHT. IMPACT. INTELLIGENCE.</h2>
-    <h1 class="hero-title">Sustainability<br><span>Report</span></h1>
+    <h1 class="hero-title">
+      Sustainability<br><span>Report</span>
+    </h1>
     <p class="hero-description">
       Empowering businesses to navigate sustainability with clarity and confidence. 
       Stay ahead with curated ESG news, sector insights, and daily trend monitoring.
     </p>
-    <a href="{{ '/today' | relative_url }}" class="cta-button">Explore Today’s News</a>
+    <a href="{{ '/today' | relative_url }}" class="cta-button" aria-label="Explore today’s sustainability news">
+      Explore Today’s News
+    </a>
   </div>
   <div class="hero-image-block">
-    <img src="https://images.unsplash.com/photo-1552083375-1447ce886485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nature scene" />
+    <img 
+      src="https://images.unsplash.com/photo-1552083375-1447ce886485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+      alt="Aerial view of a lake surrounded by forest, representing nature and sustainability" 
+      loading="lazy"
+    />
   </div>
 </section>
