@@ -1,9 +1,9 @@
 ---
 layout: default
-title: "Weekly News"
-permalink: /weekly/
+title: "Monthly News"
+permalink: /monthly/
 ---
 
-# 📆 Weekly News
+# 📊 Monthly News
 
-A summary of the most impactful sustainability developments over the past week.
+In-depth analysis and reports from the sustainability space, published monthly.
