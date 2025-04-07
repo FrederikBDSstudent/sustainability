@@ -12,6 +12,7 @@ body {
   line-height: 1.6;
 }
 
+/* Navigation styles */
 nav {
   background: #333;
   padding: 1em;
@@ -37,46 +38,63 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Main container */
 main {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 2em auto;
   padding: 1em;
 }
 
+/* Hero section */
 .hero {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1em;
   margin-bottom: 2em;
+  padding: 1em;
+  border-bottom: 2px solid #444;
 }
 
-.hero h1 {
-  font-size: 2.5em;
-  margin-bottom: 0.3em;
+.hero-text {
+  flex: 1;
+  min-width: 300px;
 }
 
-.hero p {
-  font-size: 1.2em;
-  margin-bottom: 1em;
+.hero-text h1 {
+  font-size: 3em;
+  margin-bottom: 0.2em;
 }
 
-.hero img {
-  max-width: 300px;
-  border-radius: 5px;
+.hero-text p {
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
 }
 
-address {
+.hero-text address {
   font-style: normal;
   line-height: 1.4;
+  margin-top: 0.5em;
 }
 
+.hero-image {
+  flex: 0 0 300px;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+/* News section */
 .news {
   background: #333;
   padding: 1em;
   border-radius: 5px;
+  margin-top: 2em;
 }
 
 .news h2 {
@@ -92,6 +110,7 @@ address {
   margin-bottom: 0.5em;
 }
 
+/* Footer */
 footer {
   text-align: center;
   margin: 2em 0;
