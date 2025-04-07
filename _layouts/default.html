@@ -22,6 +22,7 @@
       </nav>
     </header>
 
+    <!-- Modern hero layout or default content block -->
     <main class="page-content">
       {{ content }}
     </main>
@@ -36,11 +37,14 @@
         document.body.classList.add("light-theme");
       }
 
-      document.getElementById("theme-toggle").addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-        const newTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
-        localStorage.setItem("theme", newTheme);
-      });
+      const toggleButton = document.getElementById("theme-toggle");
+      if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+          document.body.classList.toggle("light-theme");
+          const newTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
+          localStorage.setItem("theme", newTheme);
+        });
+      }
     </script>
   </body>
 </html>
