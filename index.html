@@ -1,44 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="{{ '/' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/today' | relative_url }}">Today’s News</a></li>
-        <li><a href="{{ '/weekly' | relative_url }}">Weekly News</a></li>
-        <li><a href="{{ '/monthly' | relative_url }}">Monthly News</a></li>
-        <li><a href="{{ '/people' | relative_url }}">People</a></li>
-      </ul>
-      <button id="theme-toggle" aria-label="Toggle Theme">Toggle Theme</button>
-    </nav>
+---
+layout: default
+title: "Home"
+---
 
-    <main>
-      {{ content }}
-    </main>
-
-    <footer>
-      <p>&copy; {{ site.time | date: '%Y' }} Sustainability Report</p>
-    </footer>
-
-    <script>
-      // Load theme preference
-      const currentTheme = localStorage.getItem("theme");
-      if (currentTheme === "light") {
-        document.body.classList.add("light-theme");
-      }
-
-      // Theme toggle functionality
-      document.getElementById("theme-toggle").addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-        const newTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
-        localStorage.setItem("theme", newTheme);
-      });
-    </script>
-  </body>
-</html>
+<h1>Sustainability Report</h1>
+<p>
+  Welcome to your one-stop hub for sustainability news. Stay informed with the latest environmental headlines, weekly digests, and monthly insights — all curated to help you live smarter and greener.
+</p>
