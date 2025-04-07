@@ -1,2 +1,7 @@
-title: "My Jekyll Site"
-description: "Just another site"
+title: "Sustainability Report"
+description: "Your go-to source for sustainability news, trends, and updates"
+
+collections:
+  pages:
+    output: true
+    permalink: /:name/
