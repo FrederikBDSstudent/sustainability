@@ -1,139 +1,26 @@
-/* === Reset & Base === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+---
+layout: default
+title: "Home"
+permalink: /
+---
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #1e1e1e;
-  color: #eee;
-  line-height: 1.6;
-}
+<section class="homepage-section">
+  <h2 class="section-heading">Why Sustainability Report?</h2>
+  <p>
+    Businesses today are navigating a new landscape shaped by ESG standards, environmental accountability, and changing public expectations. <strong>Sustainability Report</strong> helps organizations stay ahead by delivering consistent, high-quality updates on sustainability trends across industries.
+  </p>
+</section>
 
-/* === Header === */
-.site-header {
-  background: #111;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #333;
-}
+<section class="homepage-section highlight-links">
+  <h2 class="section-heading">What You'll Access</h2>
+  <p><a href="{{ '/today' | relative_url }}"><strong>Today’s News</strong></a> — Daily headlines and real-time updates.</p>
+  <p><a href="{{ '/weekly' | relative_url }}"><strong>Weekly Insights</strong></a> — Curated summaries to align strategy.</p>
+  <p><a href="{{ '/monthly' | relative_url }}"><strong>Monthly Reports</strong></a> — Trend analysis and forward-looking insights.</p>
+</section>
 
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-left a {
-  margin-right: 1.5rem;
-  color: #eee;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-left a:hover {
-  color: #66ccff;
-}
-
-.nav-right button {
-  background: none;
-  border: 1px solid #eee;
-  padding: 0.4em 0.7em;
-  border-radius: 5px;
-  color: #eee;
-  cursor: pointer;
-  font-size: 1em;
-}
-
-.nav-right button:hover {
-  background: #333;
-}
-
-/* === Main Content === */
-.page-content {
-  max-width: 900px;
-  margin: 4rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.page-content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.page-content p {
-  font-size: 1.3rem;
-  max-width: 700px;
-  margin: 0 auto;
-}
-
-/* === Footer === */
-.site-footer {
-  text-align: center;
-  color: #888;
-  padding: 2rem 0;
-}
-
-/* === Light Theme === */
-body.light-theme {
-  background: #f9f9f9;
-  color: #222;
-}
-
-body.light-theme .site-header {
-  background: #f0f0f0;
-  border-bottom: 1px solid #ccc;
-}
-
-body.light-theme .nav-left a {
-  color: #222;
-}
-
-body.light-theme .nav-left a:hover {
-  color: #007acc;
-}
-
-body.light-theme .nav-right button {
-  border: 1px solid #222;
-  color: #222;
-}
-
-body.light-theme .nav-right button:hover {
-  background: #ddd;
-}
-
-body.light-theme .site-footer {
-  color: #555;
-}
-
-/* === Homepage Sections === */
-.homepage-section {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.section-heading {
-  font-size: 1.7rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-/* === Highlighted Link Section === */
-.highlight-links p {
-  font-size: 1.05rem;
-  margin: 0.7rem 0;
-}
-
-.highlight-links a {
-  color: #66ccff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.highlight-links a:hover {
-  text-decoration: underline;
-}
+<section class="homepage-section">
+  <h2 class="section-heading">Purpose-Built for Professionals</h2>
+  <p>
+    Whether you lead sustainability, risk, or communications, <em>Sustainability Report</em> provides clarity, context, and signal — not noise.
+  </p>
+</section>
