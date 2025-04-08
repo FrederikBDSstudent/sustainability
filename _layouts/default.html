@@ -7,112 +7,40 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
-    <!-- Main Content -->
-    <div id="main-content">
-      <header class="site-header">
-        <nav class="nav-bar">
-          <div class="nav-left">
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/today' | relative_url }}">Today’s News</a>
-            <a href="{{ '/weekly' | relative_url }}">Weekly News</a>
-            <a href="{{ '/monthly' | relative_url }}">Monthly News</a>
-            <a href="{{ '/people' | relative_url }}">People</a>
-          </div>
-          <div class="nav-right">
-            <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
-          </div>
-        </nav>
-      </header>
+    <header class="site-header">
+      <nav class="nav-bar">
+        <div class="nav-left">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/today' | relative_url }}">Today’s News</a>
+          <a href="{{ '/weekly' | relative_url }}">Weekly News</a>
+          <a href="{{ '/monthly' | relative_url }}">Monthly News</a>
+          <a href="{{ '/people' | relative_url }}">People</a>
+        </div>
+        <div class="nav-right">
+          <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+        </div>
+      </nav>
+    </header>
 
-      <main class="page-content">
-        {{ content }}
-      </main>
+    <main class="page-content">
+      {{ content }}
+    </main>
 
-      <footer class="site-footer">
-        <p>&copy; {{ site.time | date: '%Y' }} Sustainability Report</p>
-      </footer>
-    </div>
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: '%Y' }} Sustainability Report</p>
+    </footer>
 
-    <!-- 🌗 Theme Toggle Logic -->
     <script>
-      const themeToggle = document.getElementById("theme-toggle");
       const currentTheme = localStorage.getItem("theme");
-
       if (currentTheme === "light") {
         document.body.classList.add("light-theme");
       }
 
-      themeToggle.addEventListener("click", () => {
+      document.getElementById("theme-toggle").addEventListener("click", () => {
         document.body.classList.toggle("light-theme");
         const newTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
         localStorage.setItem("theme", newTheme);
       });
-    </script>
-
-    <!-- Koi Fish Animation Script -->
-    <div id="koi-container"></div>
-    <script>
-      const koiImages = [
-        '/background/koi1.png',
-        '/background/koi2.png',
-        '/background/koi3.png'
-      ];
-
-      const container = document.getElementById('koi-container');
-      const koiCount = 6;
-      const koiList = [];
-
-      class Koi {
-        constructor(imageSrc) {
-          this.img = document.createElement('img');
-          this.img.src = imageSrc;
-          this.img.classList.add('koi');
-
-          this.x = Math.random() * window.innerWidth;
-          this.y = Math.random() * window.innerHeight;
-          this.angle = Math.random() * Math.PI * 2;
-          this.speed = 0.5 + Math.random() * 1.5;
-          this.wiggleSpeed = 0.01 + Math.random() * 0.03;
-          this.wiggleAmplitude = 10 + Math.random() * 15;
-          this.time = Math.random() * 1000;
-
-          container.appendChild(this.img);
-        }
-
-        update() {
-          this.time += this.wiggleSpeed;
-
-          const dx = Math.cos(this.angle) * this.speed;
-          const dy = Math.sin(this.angle) * this.speed;
-
-          this.x += dx;
-          this.y += dy + Math.sin(this.time) * this.wiggleAmplitude * 0.01;
-
-          if (this.x < 0 || this.x > window.innerWidth) {
-            this.angle = Math.PI - this.angle;
-          }
-          if (this.y < 0 || this.y > window.innerHeight) {
-            this.angle = -this.angle;
-          }
-
-          const deg = (this.angle * 180) / Math.PI;
-          this.img.style.left = `${this.x}px`;
-          this.img.style.top = `${this.y}px`;
-          this.img.style.transform = `rotate(${deg}deg) scaleX(${dx < 0 ? -1 : 1})`;
-        }
-      }
-
-      for (let i = 0; i < koiCount; i++) {
-        const koi = new Koi(koiImages[Math.floor(Math.random() * koiImages.length)]);
-        koiList.push(koi);
-      }
-
-      function animate() {
-        koiList.forEach(k => k.update());
-        requestAnimationFrame(animate);
-      }
-
-      animate();
     </script>
   </body>
 </html>
