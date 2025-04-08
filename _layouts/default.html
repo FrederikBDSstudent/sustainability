@@ -22,16 +22,17 @@
       }
     </style>
   </head>
+
   <body>
     <div id="vanta-bg">
       <header class="site-header">
         <nav class="nav-bar">
           <div class="nav-left">
-            <a href="{{ '/' | relative_url }}">Home</a>
-            <a href="{{ '/today' | relative_url }}">Today’s News</a>
-            <a href="{{ '/weekly' | relative_url }}">Weekly News</a>
-            <a href="{{ '/monthly' | relative_url }}">Monthly News</a>
-            <a href="{{ '/people' | relative_url }}">People</a>
+            <a href="{{ '/home.html' | relative_url }}">Home</a>
+            <a href="{{ '/today.html' | relative_url }}">Today’s News</a>
+            <a href="{{ '/weekly.html' | relative_url }}">Weekly News</a>
+            <a href="{{ '/monthly.html' | relative_url }}">Monthly News</a>
+            <a href="{{ '/people.html' | relative_url }}">People</a>
           </div>
           <div class="nav-right">
             <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
@@ -48,10 +49,11 @@
       </footer>
     </div>
 
-    <!-- Vanta.js Dependencies -->
+    <!-- Vanta Background Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 
+    <!-- Theme Toggle + Vanta Background Control -->
     <script>
       let vantaEffect;
 
@@ -82,12 +84,15 @@
       }
       setVanta(currentTheme);
 
-      document.getElementById("theme-toggle").addEventListener("click", () => {
-        document.body.classList.toggle("light-theme");
-        const newTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
-        localStorage.setItem("theme", newTheme);
-        setVanta(newTheme);
-      });
+      const toggleButton = document.getElementById("theme-toggle");
+      if (toggleButton) {
+        toggleButton.addEventListener("click", () => {
+          document.body.classList.toggle("light-theme");
+          const newTheme = document.body.classList.contains("light-theme") ? "light" : "dark";
+          localStorage.setItem("theme", newTheme);
+          setVanta(newTheme);
+        });
+      }
     </script>
   </body>
 </html>
