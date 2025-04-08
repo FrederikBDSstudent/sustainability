@@ -136,18 +136,29 @@ body.light-theme .page-content {
   background-color: rgba(255, 255, 255, 0.6);
 }
 
-/* === Homepage Sections === */
-.homepage-section {
+/* === Shared Homepage Section Styling === */
+.homepage-section,
+.from-tip-section,
+.about-us-section {
   max-width: 850px;
   margin: 4rem auto;
   padding: 0 1.5rem 3rem;
   text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary, #ccc);
 }
 
 .section-heading {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   font-weight: 600;
+}
+
+body.light-theme .homepage-section,
+body.light-theme .from-tip-section,
+body.light-theme .about-us-section {
+  color: #333;
 }
 
 /* === Highlighted Link Section === */
@@ -164,33 +175,6 @@ body.light-theme .page-content {
 
 .highlight-links a:hover {
   text-decoration: underline;
-}
-
-/* === Hero Section (Text Only) === */
-.hero-banner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6rem 1rem 4rem;
-  text-align: center;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-  font-size: 1.3rem;
-  font-weight: 400;
-  color: inherit;
-  max-width: 700px;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-
-body.light-theme .hero-subtitle {
-  color: #333;
 }
 
 /* === Hero With Image (Updated Layout) === */
@@ -308,13 +292,5 @@ body,
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem;
   }
 }
