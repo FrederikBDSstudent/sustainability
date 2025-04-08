@@ -8,52 +8,50 @@
 
     <style>
       #vanta-bg {
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
-        min-height: 100vh;
+        height: 100%;
         z-index: -1;
-      }
-
-      body > * {
-        position: relative;
-        z-index: 1;
+        pointer-events: none; /* Allow clicks through the background */
       }
     </style>
   </head>
 
   <body>
-    <div id="vanta-bg">
-      <header class="site-header">
-        <nav class="nav-bar">
-          <div class="nav-left">
-            <a href="{{ '/home.html' | relative_url }}">Home</a>
-            <a href="{{ '/today.html' | relative_url }}">Today’s News</a>
-            <a href="{{ '/weekly.html' | relative_url }}">Weekly News</a>
-            <a href="{{ '/monthly.html' | relative_url }}">Monthly News</a>
-            <a href="{{ '/people.html' | relative_url }}">People</a>
-          </div>
-          <div class="nav-right">
-            <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
-          </div>
-        </nav>
-      </header>
+    <!-- Vanta background only -->
+    <div id="vanta-bg"></div>
 
-      <main class="page-content">
-        {{ content }}
-      </main>
+    <!-- Main content sits ABOVE the background -->
+    <header class="site-header">
+      <nav class="nav-bar">
+        <div class="nav-left">
+          <a href="{{ '/home.html' | relative_url }}">Home</a>
+          <a href="{{ '/today.html' | relative_url }}">Today’s News</a>
+          <a href="{{ '/weekly.html' | relative_url }}">Weekly News</a>
+          <a href="{{ '/monthly.html' | relative_url }}">Monthly News</a>
+          <a href="{{ '/people.html' | relative_url }}">People</a>
+        </div>
+        <div class="nav-right">
+          <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
+        </div>
+      </nav>
+    </header>
 
-      <footer class="site-footer">
-        <p>&copy; {{ site.time | date: '%Y' }} Sustainability Report</p>
-      </footer>
-    </div>
+    <main class="page-content">
+      {{ content }}
+    </main>
 
-    <!-- Vanta Background Dependencies -->
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: '%Y' }} Sustainability Report</p>
+    </footer>
+
+    <!-- Vanta & Three.js scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 
-    <!-- Theme Toggle + Vanta Background Control -->
+    <!-- Theme toggle + Vanta initialization -->
     <script>
       let vantaEffect;
 
