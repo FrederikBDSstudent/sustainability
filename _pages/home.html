@@ -1,86 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sustainability Report</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-</head>
-<body class="dark-theme"> <!-- Or 'light-theme' if using light mode -->
+---
+layout: default
+title: "Home"
+permalink: /
+---
 
-  <!-- Animated Background -->
-  <div id="animated-bg"></div>
-
-  <!-- Main Content -->
-  <div id="main-content">
-    <header class="site-header">
-      <div class="nav-bar">
-        <div class="nav-left">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-        </div>
-        <div class="nav-right">
-          <button id="themeToggle">Toggle Theme</button>
-        </div>
-      </div>
-    </header>
-
-    <section class="homepage-section">
-      <h2 class="section-heading">Why Sustainability Report?</h2>
-      <p>
-        Businesses today are navigating a new landscape shaped by ESG standards, environmental accountability, and changing public expectations.
-        <strong>Sustainability Report</strong> helps organizations stay ahead by delivering consistent, high-quality updates on sustainability trends across industries.
-      </p>
-    </section>
-
-    <section class="homepage-section highlight-links">
-      <h2 class="section-heading">What You'll Access</h2>
-      <p><a href="/today"><strong>Today’s News</strong></a> — Daily headlines and real-time updates.</p>
-      <p><a href="/weekly"><strong>Weekly Insights</strong></a> — Curated summaries to align strategy.</p>
-      <p><a href="/monthly"><strong>Monthly Reports</strong></a> — Trend analysis and forward-looking insights.</p>
-    </section>
-
-    <section class="homepage-section">
-      <h2 class="section-heading">Purpose-Built for Professionals</h2>
-      <p>
-        Whether you lead sustainability, risk, or communications, <em>Sustainability Report</em> provides clarity, context, and signal — not noise.
-      </p>
-    </section>
-
-    <footer class="site-footer">
-      &copy; 2025 Sustainability Report
-    </footer>
+<section class="hero-banner">
+  <div class="hero-content">
+    <h1>Sustainability Report</h1>
+    <p class="hero-subtitle">
+      A centralized platform for sustainability intelligence — curated for business decision-makers.
+    </p>
   </div>
+</section>
 
-  <!-- Vanta.js Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-  <script>
-    function initVanta() {
-      if (window.vantaEffect) window.vantaEffect.destroy();
+<section class="homepage-section">
+  <h2 class="section-heading">Why Sustainability Report?</h2>
+  <p>
+    Businesses today are navigating a new landscape shaped by ESG standards, environmental accountability, and changing public expectations. <strong>Sustainability Report</strong> helps organizations stay ahead by delivering consistent, high-quality updates on sustainability trends across industries.
+  </p>
+</section>
 
-      window.vantaEffect = VANTA.NET({
-        el: "#animated-bg",
-        mouseControls: true,
-        touchControls: true,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: "#66ccff",
-        backgroundColor: document.body.classList.contains("light-theme") ? 0xf9f9f9 : 0x1e1e1e
-      });
-    }
+<section class="homepage-section highlight-links">
+  <h2 class="section-heading">What You'll Access</h2>
+  <p><a href="{{ '/today' | relative_url }}"><strong>Today’s News</strong></a> — Daily headlines and real-time updates.</p>
+  <p><a href="{{ '/weekly' | relative_url }}"><strong>Weekly Insights</strong></a> — Curated summaries to align strategy.</p>
+  <p><a href="{{ '/monthly' | relative_url }}"><strong>Monthly Reports</strong></a> — Trend analysis and forward-looking insights.</p>
+</section>
 
-    document.addEventListener("DOMContentLoaded", initVanta);
-
-    // Optional: Theme toggle button functionality
-    const toggleBtn = document.getElementById('themeToggle');
-    toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('light-theme');
-      document.body.classList.toggle('dark-theme');
-      initVanta();
-    });
-  </script>
-</body>
-</html>
+<section class="homepage-section">
+  <h2 class="section-heading">Purpose-Built for Professionals</h2>
+  <p>
+    Whether you lead sustainability, risk, or communications, <em>Sustainability Report</em> provides clarity, context, and signal — not noise.
+  </p>
+</section>
