@@ -17,13 +17,13 @@ body {
 
 /* === Vanta Background Layering === */
 #vanta-bg {
-  position: fixed; /* changed from absolute */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* keeps it behind all content */
-  pointer-events: none; /* makes sure clicks pass through */
+  z-index: -1;
+  pointer-events: none;
 }
 
 /* === Header === */
@@ -73,7 +73,7 @@ body {
   margin: 4rem auto;
   padding: 2rem 1rem;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.4); /* readable on dark background */
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
   transition: background-color 0.3s ease;
 }
@@ -166,7 +166,7 @@ body.light-theme .page-content {
   text-decoration: underline;
 }
 
-/* === Hero Section (Homepage) === */
+/* === Hero Section (Text Only) === */
 .hero-banner {
   display: flex;
   align-items: center;
@@ -190,6 +190,56 @@ body.light-theme .page-content {
 }
 
 body.light-theme .hero-subtitle {
+  color: #333;
+}
+
+/* === Hero With Image (New Section) === */
+.hero-with-image {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 4rem 1.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-with-image .hero-text {
+  flex: 1 1 320px;
+  max-width: 500px;
+}
+
+.hero-with-image .hero-text h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero-with-image .hero-text p {
+  font-size: 1.25rem;
+  opacity: 0.85;
+}
+
+.hero-with-image .hero-image {
+  flex: 1 1 320px;
+  max-width: 600px;
+}
+
+.hero-with-image .hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-with-image .hero-image img:hover {
+  transform: scale(1.02);
+}
+
+body.light-theme .hero-with-image .hero-text p {
   color: #333;
 }
 
@@ -230,5 +280,15 @@ body,
 
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+
+  .hero-with-image {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-with-image .hero-text,
+  .hero-with-image .hero-image {
+    max-width: 100%;
   }
 }
