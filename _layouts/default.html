@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title | default: site.title }}</title>
+    <title>{{ page.page_title | default: page.title | default: site.title }}</title>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
     <style>
@@ -14,7 +14,7 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        pointer-events: none; /* Allow clicks through the background */
+        pointer-events: none;
       }
     </style>
   </head>
@@ -32,6 +32,7 @@
           <a href="{{ '/weekly' | relative_url }}">Weekly News</a>
           <a href="{{ '/monthly' | relative_url }}">Monthly News</a>
           <a href="{{ '/people' | relative_url }}">People</a>
+          <a href="{{ '/from-tip-to-story' | relative_url }}">From Tip to Story</a>
         </div>
         <div class="nav-right">
           <button id="theme-toggle" aria-label="Toggle Theme">🌓</button>
