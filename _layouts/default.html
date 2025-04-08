@@ -7,12 +7,6 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
-    <!-- 🌌 Realistic Aurora Background Video -->
-    <video autoplay muted loop id="aurora-bg">
-      <source src="{{ '/assets/video/aurora.mp4' | relative_url }}" type="video/mp4">
-    </video>
-    <div id="aurora-overlay"></div>
-
     <!-- Main Content -->
     <div id="main-content">
       <header class="site-header">
@@ -94,7 +88,6 @@
           this.x += dx;
           this.y += dy + Math.sin(this.time) * this.wiggleAmplitude * 0.01;
 
-          // Bounce off edges
           if (this.x < 0 || this.x > window.innerWidth) {
             this.angle = Math.PI - this.angle;
           }
