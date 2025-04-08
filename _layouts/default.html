@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title | default: site.title }}</title>
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+
+    <!-- Vanta Background Styling -->
     <style>
       #vanta-bg {
         position: fixed;
@@ -14,16 +20,16 @@
         width: 100%;
         height: 100%;
         z-index: -1;
-        pointer-events: none; /* Allow clicks through the background */
+        pointer-events: none;
       }
     </style>
   </head>
 
   <body>
-    <!-- Vanta background only -->
+    <!-- Background -->
     <div id="vanta-bg"></div>
 
-    <!-- Main content sits ABOVE the background -->
+    <!-- Navigation -->
     <header class="site-header">
       <nav class="nav-bar">
         <div class="nav-left">
@@ -39,19 +45,21 @@
       </nav>
     </header>
 
+    <!-- Page Content -->
     <main class="page-content">
       {{ content }}
     </main>
 
+    <!-- Footer -->
     <footer class="site-footer">
       <p>&copy; {{ site.time | date: '%Y' }} Sustainability Report</p>
     </footer>
 
-    <!-- Vanta & Three.js scripts -->
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 
-    <!-- Theme toggle + Vanta initialization -->
+    <!-- Theme & Vanta Logic -->
     <script>
       let vantaEffect;
 
