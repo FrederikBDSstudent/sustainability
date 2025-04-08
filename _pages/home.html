@@ -1,68 +1,25 @@
-.hero-with-image {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 4rem 2rem;
-  align-items: center;
-  justify-content: center;
-}
+---
+layout: default
+title: "Home"
+permalink: /
+---
 
-.hero-text {
-  flex: 1 1 300px;
-  max-width: 500px;
-}
+<section class="hero-with-image">
+  <div class="hero-text">
+    <h1>Sustainability News</h1>
+    <p>Your source for curated insights into the world of environmental responsibility, climate action, and green innovation.</p>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80" alt="Nature landscape">
+  </div>
+</section>
 
-.hero-text h1 {
-  font-size: 2.75rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: var(--text-primary, #fff);
-}
-
-.hero-text p {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: var(--text-secondary, #ccc);
-}
-
-.hero-image {
-  flex: 1 1 300px;
-  max-width: 600px;
-}
-
-.hero-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease-in-out;
-}
-
-.hero-image img:hover {
-  transform: scale(1.02);
-}
-
-.intro-text {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 2rem 4rem;
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: var(--text-secondary, #ccc);
-  text-align: center;
-}
-
-.intro-text strong {
-  color: var(--text-primary, #fff);
-}
-
-body.light-theme .hero-text h1,
-body.light-theme .intro-text strong {
-  color: #111;
-}
-
-body.light-theme .hero-text p,
-body.light-theme .intro-text {
-  color: #444;
-}
+<section class="homepage-section">
+  <div class="section-heading">About This Site</div>
+  <p>
+    Sustainability is no longer optional — it's the foundation for building resilient, responsible, and future-ready businesses and communities.
+  </p>
+  <p>
+    <strong>Sustainability News</strong> delivers timely updates, insightful summaries, and curated content for anyone invested in environmental progress. Whether you're a policy analyst, student, or executive, this space is made for clarity and impact.
+  </p>
+</section>
