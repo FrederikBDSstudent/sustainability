@@ -7,16 +7,34 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: #1e1e1e;
   color: #eee;
   line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* === Vanta Background Layering === */
+#vanta-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* === Header === */
 .site-header {
-  background: #111;
+  background: rgba(17, 17, 17, 0.85);
   padding: 1rem 2rem;
   border-bottom: 1px solid #333;
+  transition: background 0.3s ease;
 }
 
 .nav-bar {
@@ -30,6 +48,7 @@ body {
   color: #eee;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-left a:hover {
@@ -44,6 +63,7 @@ body {
   color: #eee;
   cursor: pointer;
   font-size: 1em;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
 .nav-right button:hover {
@@ -54,8 +74,11 @@ body {
 .page-content {
   max-width: 900px;
   margin: 4rem auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
   text-align: center;
+  background-color: rgba(0, 0, 0, 0.4); /* readable on Vanta dark */
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
 }
 
 .page-content h1 {
@@ -74,16 +97,18 @@ body {
   text-align: center;
   color: #888;
   padding: 2rem 0;
+  border-top: 1px solid #444;
+  background: rgba(17, 17, 17, 0.85);
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* === Light Theme === */
 body.light-theme {
-  background: #f9f9f9;
   color: #222;
 }
 
 body.light-theme .site-header {
-  background: #f0f0f0;
+  background: rgba(240, 240, 240, 0.85);
   border-bottom: 1px solid #ccc;
 }
 
@@ -106,6 +131,11 @@ body.light-theme .nav-right button:hover {
 
 body.light-theme .site-footer {
   color: #555;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+body.light-theme .page-content {
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 /* === Homepage Sections === */
@@ -136,4 +166,26 @@ body.light-theme .site-footer {
 
 .highlight-links a:hover {
   text-decoration: underline;
+}
+
+/* === Responsive === */
+@media (max-width: 600px) {
+  .page-content h1 {
+    font-size: 2rem;
+  }
+
+  .page-content p,
+  .highlight-links p {
+    font-size: 1.1rem;
+  }
+
+  .nav-left a {
+    margin-right: 1rem;
+  }
+
+  .nav-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }
