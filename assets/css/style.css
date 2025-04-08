@@ -22,14 +22,34 @@ body.light-theme {
   color: #222;
 }
 
-/* === Animated Background Container === */
-#animated-bg {
+/* === Aurora Video Background === */
+#aurora-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.5;
+  filter: brightness(0.6) saturate(1.2);
+  pointer-events: none;
+}
+
+body.light-theme #aurora-bg {
+  filter: brightness(0.85) saturate(1.1);
+}
+
+/* Optional overlay for readability */
+#aurora-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
   z-index: -1;
+  pointer-events: none;
 }
 
 /* === Main Content Container === */
