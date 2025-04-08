@@ -104,6 +104,7 @@ body > * {
 
 /* === Light Theme === */
 body.light-theme {
+  background: #f9f9f9;
   color: #222;
 }
 
@@ -168,6 +169,43 @@ body.light-theme .page-content {
   text-decoration: underline;
 }
 
+/* === Hero Section (Homepage) === */
+.hero-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1rem 4rem;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: inherit;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+body.light-theme .hero-subtitle {
+  color: #333;
+}
+
+/* === Transitions === */
+body,
+.site-header,
+.site-footer,
+.page-content,
+.nav-left a,
+.nav-right button {
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
 /* === Responsive === */
 @media (max-width: 600px) {
   .page-content h1 {
@@ -187,5 +225,13 @@ body.light-theme .page-content {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
   }
 }
